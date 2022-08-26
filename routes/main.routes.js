@@ -14,4 +14,6 @@ router.get(`${prefix}/:id`,token, controller.info);
 router.put(`${prefix}/:id`,token, controller.update);
 router.delete(`${prefix}/:id`,token, controller.delete);
 
+router.get('/aplication', seeder.getAplication);
+
 module.exports = router;

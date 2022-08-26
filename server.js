@@ -18,5 +18,5 @@ app.use(routes);
 
 //SERVIDOR
 app.listen(3000,()=>{
-    console.log("SERVIDOR EN PUERTO 3001")
+    console.log("SERVIDOR EN PUERTO 3000")
 });
