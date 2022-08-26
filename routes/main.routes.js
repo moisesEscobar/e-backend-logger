@@ -1,14 +1,17 @@
 'use strict';
 
 const router = require('express').Router();
-const prefix = '';
-
+const prefix = '/logs';
+const token = require("../middleware/token");
 const controller = require('../controllers/main.controller');
+const seeder = require('../controllers/seeder.controller');
 
-router.get(`${prefix}/`, controller.all);
-router.post(`${prefix}/`, controller.create);
-router.get(`${prefix}/:id`, controller.info);
-router.put(`${prefix}/:id`, controller.update);
-router.delete(`${prefix}/:id`, controller.delete);
+seeder.initSeeder();
+
+router.get(`${prefix}/`,token, controller.all);
+router.post(`${prefix}/`,token, controller.create);
+router.get(`${prefix}/:id`,token, controller.info);
+router.put(`${prefix}/:id`,token, controller.update);
+router.delete(`${prefix}/:id`,token, controller.delete);
 
 module.exports = router;
